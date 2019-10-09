@@ -64,7 +64,7 @@ spec:
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: test-volume
+  name: test-volume1
 spec:
   accessModes:
     - ReadWriteOnce
@@ -76,7 +76,7 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: test-volume
+  name: test-volume1
 spec:
   accessModes:
     - ReadWriteMany

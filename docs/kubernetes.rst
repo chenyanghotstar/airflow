@@ -66,10 +66,10 @@ Kubernetes Operator
     volume_config= {
         'persistentVolumeClaim':
           {
-            'claimName': 'test-volume'
+            'claimName': 'test-volume1'
           }
         }
-    volume = Volume(name='test-volume', configs=volume_config)
+    volume = Volume(name='test-volume1', configs=volume_config)
 
     affinity = {
         'nodeAffinity': {

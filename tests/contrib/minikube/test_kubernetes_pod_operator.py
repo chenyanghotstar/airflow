@@ -288,7 +288,7 @@ class TestKubernetesPodOperator(unittest.TestCase):
     @staticmethod
     def test_volume_mount():
         with mock.patch.object(PodLauncher, 'log') as mock_logger:
-            volume_mount = VolumeMount('test-volume',
+            volume_mount = VolumeMount('test-volume1',
                                        mount_path='/root/mount_file',
                                        sub_path=None,
                                        read_only=True)
@@ -296,10 +296,10 @@ class TestKubernetesPodOperator(unittest.TestCase):
             volume_config = {
                 'persistentVolumeClaim':
                     {
-                        'claimName': 'test-volume'
+                        'claimName': 'test-volume1'
                     }
             }
-            volume = Volume(name='test-volume', configs=volume_config)
+            volume = Volume(name='test-volume1', configs=volume_config)
             k = KubernetesPodOperator(
                 namespace='default',
                 image="ubuntu:16.04",

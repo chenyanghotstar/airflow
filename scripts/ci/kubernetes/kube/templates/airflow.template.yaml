@@ -51,7 +51,7 @@ spec:
           subPath: airflow.cfg
         - name: {{INIT_DAGS_VOLUME_NAME}}
           mountPath: /root/airflow/dags
-        - name: test-volume
+        - name: test-volume1
           mountPath: /root/test_volume
         env:
         - name: SQL_ALCHEMY_CONN
@@ -121,9 +121,9 @@ spec:
         emptyDir: {}
       - name: airflow-dags-git
         emptyDir: {}
-      - name: test-volume
+      - name: test-volume1
         persistentVolumeClaim:
-          claimName: test-volume
+          claimName: test-volume1
       - name: airflow-logs
         persistentVolumeClaim:
           claimName: airflow-logs
