@@ -53,11 +53,12 @@ try:
         arguments=["echo", "10"],
         labels={"foo": "bar"},
         name="airflow-test-pod",
-        in_cluster=False,
+        in_cluster=True,
         task_id="task",
         get_logs=True,
         dag=dag,
         is_delete_operator_pod=False,
+        image_pull_policy="Always",
         tolerations=tolerations
     )
 
