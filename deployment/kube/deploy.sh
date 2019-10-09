@@ -71,7 +71,7 @@ rm -f "${BUILD_DIRNAME}"/*
 if [[ "${GIT_SYNC}" == "0" ]]; then
     INIT_DAGS_VOLUME_NAME=airflow-dags
     POD_AIRFLOW_DAGS_VOLUME_NAME=airflow-dags
-    CONFIGMAP_DAGS_FOLDER=/root/airflow/dags
+    CONFIGMAP_DAGS_FOLDER=/airflow-dags
     CONFIGMAP_GIT_DAGS_FOLDER_MOUNT_POINT=
     CONFIGMAP_DAGS_VOLUME_CLAIM=airflow-dags
 else
