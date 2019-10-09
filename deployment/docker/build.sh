@@ -32,12 +32,6 @@ if [[ -n "${TRAVIS}" || -z "${AIRFLOW_CI_REUSE_K8S_IMAGE}" ]] && \
   exit 0
 fi
 
-if [[ "${VM_DRIVER:-none}" != "none" ]]; then
-    if ENVCONFIG=$(minikube docker-env); then
-      eval "${ENVCONFIG}"
-    fi
-fi
-
 echo "Airflow directory ${AIRFLOW_ROOT}"
 echo "Airflow Docker directory ${DIRNAME}"
 

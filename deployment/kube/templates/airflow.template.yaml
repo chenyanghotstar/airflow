@@ -119,9 +119,6 @@ spec:
         emptyDir: {}
       - name: airflow-dags-git
         emptyDir: {}
-      - name: test-volume
-        persistentVolumeClaim:
-          claimName: test-volume
       - name: airflow-logs
         persistentVolumeClaim:
           claimName: airflow-logs

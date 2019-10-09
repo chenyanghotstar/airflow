@@ -199,33 +199,3 @@ else
   dump_logs
   exit 1
 fi
-
-# Wait until Airflow webserver is up
-MINIKUBE_IP=$(minikube ip)
-AIRFLOW_WEBSERVER_IS_READY="0"
-CONSECUTIVE_SUCCESS_CALLS=0
-for i in {1..30}
-do
-  echo "------- Wait until webserver is up: $i -------"
-  HTTP_CODE=$(curl -LI "http://${MINIKUBE_IP}:30809/health" -o /dev/null -w '%{http_code}\n' -sS) || true
-  if [[ "${HTTP_CODE}" == 200 ]]; then
-    (( CONSECUTIVE_SUCCESS_CALLS+=1 ))
-  else
-    CONSECUTIVE_SUCCESS_CALLS="0"
-  fi
-  if [[ "${CONSECUTIVE_SUCCESS_CALLS}" == 3 ]]; then
-    AIRFLOW_WEBSERVER_IS_READY="1"
-    break
-  fi
-  sleep 10
-done
-
-if [[ "${AIRFLOW_WEBSERVER_IS_READY}" == "1" ]]; then
-  echo "Airflow webserver is ready."
-else
-  echo >&2 "Airflow webserver is not ready after waiting for a long time. Exiting..."
-  dump_logs
-  exit 1
-fi
-
-dump_logs
