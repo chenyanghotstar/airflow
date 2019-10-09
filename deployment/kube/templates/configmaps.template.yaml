@@ -158,7 +158,7 @@ data:
     page_size = 100
 
     # Use FAB-based webserver with RBAC feature
-    rbac = True
+    rbac = False
 
     [smtp]
     # If you want airflow to send emails on retries, failure, and you want to use
