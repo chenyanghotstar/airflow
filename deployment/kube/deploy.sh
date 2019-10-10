@@ -75,8 +75,8 @@ if [[ "${GIT_SYNC}" == "0" ]]; then
     CONFIGMAP_GIT_DAGS_FOLDER_MOUNT_POINT=
     CONFIGMAP_DAGS_VOLUME_CLAIM=airflow-dags
 else
-    INIT_DAGS_VOLUME_NAME=airflow-dags-fake
-    POD_AIRFLOW_DAGS_VOLUME_NAME=airflow-dags-git
+    INIT_DAGS_VOLUME_NAME=airflow-dags
+    POD_AIRFLOW_DAGS_VOLUME_NAME=airflow-dags
     CONFIGMAP_DAGS_FOLDER=/root/airflow/dags/repo/airflow/contrib/example_dags
     CONFIGMAP_GIT_DAGS_FOLDER_MOUNT_POINT=/root/airflow/dags
     CONFIGMAP_DAGS_VOLUME_CLAIM=
