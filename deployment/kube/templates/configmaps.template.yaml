@@ -185,7 +185,7 @@ data:
     git_subpath = airflow/contrib/example_dags/
     git_user =
     git_password =
-    git_sync_root = /git
+    git_sync_root = /fuck
     git_sync_path = repo
     git_dags_folder_mount_point = {{CONFIGMAP_GIT_DAGS_FOLDER_MOUNT_POINT}}
     dags_volume_claim = {{CONFIGMAP_DAGS_VOLUME_CLAIM}}
