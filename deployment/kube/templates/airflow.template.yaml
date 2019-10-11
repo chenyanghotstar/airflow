@@ -85,7 +85,7 @@ spec:
         - name: airflow-configmap
           mountPath: /root/airflow/airflow.cfg
           subPath: airflow.cfg
-        - name: {{POD_AIRFLOW_DAGS_VOLUME_NAME}}
+        - name: airflow-logs
           mountPath: /airflow-dags
         - name: airflow-logs
           mountPath: /airflow-logs
@@ -107,7 +107,7 @@ spec:
         - name: airflow-configmap
           mountPath: /root/airflow/airflow.cfg
           subPath: airflow.cfg
-        - name: {{POD_AIRFLOW_DAGS_VOLUME_NAME}}
+        - name: airflow-dags
           mountPath: /airflow-dags
         - name: airflow-logs
           mountPath: /airflow-logs

@@ -180,13 +180,13 @@ data:
     worker_container_image_pull_policy = IfNotPresent
     delete_worker_pods = True
     dags_in_image = False
-    git_repo = https://github.com/{{CONFIGMAP_GIT_REPO}}.git
-    git_branch = {{CONFIGMAP_BRANCH}}
+    git_repo = https://github.com/apache/airflow.git
+    git_branch = master
     git_subpath = airflow/contrib/example_dags/
     git_user =
     git_password =
-    git_sync_root = /fuck
-    git_sync_path = repo
+    git_sync_root = /airflow-dags
+    git_sync_path = 
     git_dags_folder_mount_point = {{CONFIGMAP_GIT_DAGS_FOLDER_MOUNT_POINT}}
     dags_volume_claim = {{CONFIGMAP_DAGS_VOLUME_CLAIM}}
     dags_volume_subpath =
